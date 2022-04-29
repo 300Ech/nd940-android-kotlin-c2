@@ -2,6 +2,7 @@ package com.udacity.asteroidradar.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.udacity.asteroidradar.BuildConfig
 import com.udacity.asteroidradar.utils.Constants
 import com.udacity.asteroidradar.domain.PictureOfDay
 import okhttp3.OkHttpClient
@@ -22,7 +23,8 @@ private val retrofit = Retrofit.Builder()
             .newBuilder()
             .addInterceptor { chain ->
                 val url =
-                    chain.request().url().newBuilder().addQueryParameter("api_key", "DEMO_KEY")
+                    chain.request().url().newBuilder()
+                        .addQueryParameter("api_key", BuildConfig.NASA_API_KEY)
                         .build()
                 chain.proceed(chain.request().newBuilder().url(url).build())
             }
