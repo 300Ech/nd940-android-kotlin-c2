@@ -27,7 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:contentDescription="@{asteroid.codename}"
+            android:contentDescription="@{asteroid.isPotentiallyHazardousToText()}"
             app:asteroidStatusImage="@{asteroid.potentiallyHazardous}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/imageVerticalDelimiter"
