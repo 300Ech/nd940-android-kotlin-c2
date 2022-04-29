@@ -15,7 +15,7 @@ class RefreshDataWorker(applicationContext: Context, params: WorkerParameters) :
 
         return try {
             repository.refreshAsteroids()
-            //repository.deleteOldAsteroids()
+            repository.deleteOldAsteroids()
             Result.success()
         } catch (e: HttpException) {
             Result.retry()
